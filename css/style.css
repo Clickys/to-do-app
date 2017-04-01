@@ -1,0 +1,161 @@
+/* Box style for toDo notes */
+@import url(https://fonts.googleapis.com/css?family=Indie+Flower);
+
+body {
+     background-color: rgb(0, 121, 191); 
+}
+
+
+.notesDecoration {
+	  color: #616E14;
+     border: solid 1px #BFD62F;
+     background-color: #DAE691;
+     -moz-border-radius: 6px;
+     -webkit-border-radius: 6px;
+     border-radius: 6px;
+     padding: 14px 20px;
+     margin: 5px;
+     word-wrap: break-word;
+     width: -webkit-fit-content; /* Fit the content exactly to the div size */
+     height: -webkit-fit-content;
+     width: -moz-fit-content;
+     height: -moz-fit-content;
+}
+
+
+/* ----------------------- */
+
+/* The date and the icon element added by pressing toDo! it puts the date element to the right  of the notebox*/
+.added {
+    font-size: 15px;
+    
+}
+.notesHeader {
+    font-family: 'Indie Flower', cursive;
+    text-align: center;
+    padding: 10px;
+}
+
+.headerToolBar {
+    height: 30px;
+    background-color: #0560BB;
+
+}
+
+/*CSS Animation and Style For The Search Box on Top Left */
+input[type=text] {
+    width: 130px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: #3F7FBF;
+    color: white;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+    height: 30px;
+    padding-right: 15px;
+}
+::-webkit-input-placeholder { /* Search Box place holder color */
+    color: white;
+}
+
+input[type=text]:focus {
+    width: 50%;
+}
+
+/* Fix the Search Container and the Search Icon Position for the searchbox */ 
+.wrapper input[type="text"] {
+    position: relative; 
+    top: 2px;
+}
+input { font-family: 'FontAwesome'; } 
+.searchBtn {
+    color: white;
+
+}
+.searchBtn:before {
+    font-family: 'FontAwesome';
+    color: white;
+    position: relative;
+    content: "\f002";
+}
+
+#headerName {
+    font-family: 'Indie Flower', cursive;
+    color: white;
+    font-weight: 700;
+}
+.headerDate:before{
+    font-family: 'FontAwesome';
+    color: white;
+    content: "\f073";
+    padding-right: 5px;
+}
+.headerDate {
+    font-family: 'Indie Flower', cursive;
+    color: white;
+    font-size: 20px;  
+}
+
+button#addNotesButton {
+    position: relative;
+    left: 50%;
+}
+
+/* addNotesTextArea Styles */
+#newNoteForm > .form-group > label {
+    font-family: 'Indie Flower', cursive;
+    color: white;
+}
+#newNoteForm {
+    width: 100%;
+}
+.topSpace {
+    height: 10px;
+}
+
+
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 35%;
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    text-decoration: none;
+    cursor: pointer;
+}
+.wordCount {
+    float: right;
+}

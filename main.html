@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+
+
+    <script src="https://use.fontawesome.com/967ff277fb.js"></script>
+    <script src="js/moment.js"></script>
+    <link rel="stylesheet" href="/css/hover.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row topSpace"></div>
+        <div class="row ">
+            <div class="col-lg-4 col-md-4 col-sm-12 searchContainer text-center">
+                <form class="wrapper">
+                    <input type="text" name="search" placeholder="Search..">
+                    <button type="button" class="btn btn-sm btn-outline-success searchBtn"></button>
+                </form>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6 hvr-grow-rotate">
+                <h3 class="text-center " id="headerName">My notes</h3>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-3 col-6">
+                <p class="headerDate  hvr-wobble-vertical text-center"></p>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-3 col-6">
+                <button type="button" class="btn btn-success hvr-buzz-out" id="addNotesButton"><i class="fa fa-plus"></i></button>
+            </div>
+        </div>
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+        <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close text-right ">&times;</span>
+                <form id="newNoteForm">
+                    <div class="form-group">
+<!--                        <span class="iconsToAdd"><i class="fa fa-address-book" aria-hidden="true"></i><i class="fa fa-id-badge" aria-hidden="true"></i></span>-->
+                        <label for="addNotesTextarea" style="color: #3F7FBF">Add notes !</label>
+                        <textarea class="form-control" id="addNotesTextarea" placeholder="Type your notes" rows="3"></textarea>
+                        <input class="btn btn-success btn-sm" type="submit" value="Add" id="btnAddNotes">
+                        <span class="wordCount text-right"></span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row" id="notesPosition"></div>
+        
+    </div>
+
+
+
+
+
+
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="js/jquery-3.2.0.min.js"></script>
+    <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>

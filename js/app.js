@@ -52,24 +52,51 @@
         var year = noteAddedDate.getFullYear().toString().substr(-2);
         var daysArray = ['Sun,', 'Mon,', 'Thues,', 'Wed,', 'Thurs,', 'Fri,', 'Sat,'];
         var monthsArray = ['Jan.', 'Feb.', 'Mar.', 'Apr.', 'May', 'Jun.', 'Jul.', 'Aug.', 'Sept.', 'Oct.', 'Nov.', 'Dec.'];
-            
+       
+        hours = (hours === 0 ? '12' : hours);
+        minutes = (minutes < 10 ? '0' : '') + minutes;
+        
         notesTextareaBtn.addEventListener('click', function(e){
             e.preventDefault();
             var notesTextarea = document.getElementById('addNotesTextarea').value;
             var newEl = document.createElement('div');
             var dateEl = document.createElement('span');
             var userTxt = document.createTextNode(notesTextarea);
-            var dateTxt = daysArray[day] + ' '+ day + ' ' + monthsArray[month] + ' ' + year;
+            var dateTxt =  day + ' ' + monthsArray[month] + ' ' + year + ' ' + hours + ':' + minutes;
+            var dateNode = document.createTextNode(dateTxt);
+            var noteToolbar = document.createElement('p');
+            var closeTol = document.createElement('i');
+            noteToolbar.className += " noteToolbar text-right";
+            closeTol.className += " fa fa-window-close";
+            closeTol.id = "closeNote";
+            
+            noteToolbar.appendChild(closeTol);
+            
+            dateEl.appendChild(dateNode);
+            dateEl.className += " noteDateAdded";
+            
+           
             
             newEl.appendChild(userTxt);
-            newEl.innerHTML = userTxt.textContent + ' <br> ' + dateTxt;
+           
+            newEl.innerHTML =  noteToolbar.outerHTML  + userTxt.textContent + ' <br> ' + '<br>' + dateEl.outerHTML;
             newEl.className += " col-lg-2 col-md-3 col-sm-4 col-12 notesDecoration";
             notesPositionToAdd.appendChild(newEl);
             document.getElementById("addNotesTextarea").value = "";
             
-            
+           
             
         });
+    })();
+     /// NA TA VALO MESA STO FUNCTION TOU CREATION TOU NOTE
+    (function(){
+    
+        closeNote.addEventListener('click', function(event){
+            var closeNote = document.getElementById('closeNote');
+            console.log(event.target);  
+           console.log('iam in');
+       });
+        
     })();
 
 

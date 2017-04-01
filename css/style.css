@@ -20,6 +20,7 @@ body {
      height: -webkit-fit-content;
      width: -moz-fit-content;
      height: -moz-fit-content;
+     position: relative;
 }
 
 
@@ -158,4 +159,14 @@ button#addNotesButton {
 }
 .wordCount {
     float: right;
+}
+
+.noteDateAdded {
+    font-family: 'Indie Flower', cursive;
+    color: #A190D4;
+}
+.noteToolbar {
+    position: absolute;
+    right: 2%;
+    top: 1%;
 }

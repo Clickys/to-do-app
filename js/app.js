@@ -62,13 +62,13 @@
             var newEl = document.createElement('div');
             var dateEl = document.createElement('span');
             var userTxt = document.createTextNode(notesTextarea);
-            var dateTxt =  day + ' ' + monthsArray[month] + ' ' + year + ' ' + hours + ':' + minutes;
+            var dateTxt = dayOfMonth + ' ' + monthsArray[month] + ' ' + year + ' ' + hours + ':' + minutes;
             var dateNode = document.createTextNode(dateTxt);
             var noteToolbar = document.createElement('p');
             var closeTol = document.createElement('i');
             noteToolbar.className += " noteToolbar text-right";
             closeTol.className += " fa fa-window-close";
-            closeTol.id = "closeNote";
+
             
             noteToolbar.appendChild(closeTol);
             
@@ -84,20 +84,23 @@
             notesPositionToAdd.appendChild(newEl);
             document.getElementById("addNotesTextarea").value = "";
             
+            var closeTolPos = document.getElementsByClassName('fa-window-close')[0];
+            
+            $('.fa-window-close').on('click', function(event){
+                event.preventDefault();
+                console.log($(this).parents('div')[0]);
+                $(this).parents('div')[0].remove();
+                
+            });
+//            closeTolPos.addEventListener('click', function(e) {
+//                
+//            });
+//            
            
             
         });
     })();
-     /// NA TA VALO MESA STO FUNCTION TOU CREATION TOU NOTE
-    (function(){
-    
-        closeNote.addEventListener('click', function(event){
-            var closeNote = document.getElementById('closeNote');
-            console.log(event.target);  
-           console.log('iam in');
-       });
-        
-    })();
+
 
 
     // #addNotesButton functions on click to create a note 

@@ -4,8 +4,13 @@
 
 (function () {
     
+    setInterval(intervalFunctions,1000);
+    
+    function intervalFunctions() {
         updateClock();
-        setInterval(updateClock,1000);
+    }
+    
+    
     
     function updateClock() {
         var currentTime = new Date();
@@ -64,39 +69,32 @@
             var userTxt = document.createTextNode(notesTextarea);
             var dateTxt = dayOfMonth + ' ' + monthsArray[month] + ' ' + year + ' ' + hours + ':' + minutes;
             var dateNode = document.createTextNode(dateTxt);
-            var noteToolbar = document.createElement('p');
-            var closeTol = document.createElement('i');
-            noteToolbar.className += " noteToolbar text-right";
-            closeTol.className += " fa fa-window-close";
+            var closeIcon = document.createElement('i');
+            var favourIcon = document.createElement('i');
+            
+            closeIcon.className += " fa fa-window-close";
+            favourIcon.className = " fa fa-heart";
+            
 
-            
-            noteToolbar.appendChild(closeTol);
-            
             dateEl.appendChild(dateNode);
             dateEl.className += " noteDateAdded";
             
-           
-            
+            newEl.appendChild(favourIcon);
+            newEl.appendChild(closeIcon);
             newEl.appendChild(userTxt);
            
-            newEl.innerHTML =  noteToolbar.outerHTML  + userTxt.textContent + ' <br> ' + '<br>' + dateEl.outerHTML;
+            newEl.innerHTML =  closeIcon.outerHTML + favourIcon.outerHTML  + userTxt.textContent + ' <br> ' + '<br>' + dateEl.outerHTML;
             newEl.className += " col-lg-2 col-md-3 col-sm-4 col-12 notesDecoration";
             notesPositionToAdd.appendChild(newEl);
             document.getElementById("addNotesTextarea").value = "";
-            
-            var closeTolPos = document.getElementsByClassName('fa-window-close')[0];
-            
-            $('.fa-window-close').on('click', function(event){
-                event.preventDefault();
-                console.log($(this).parents('div')[0]);
-                $(this).parents('div')[0].remove();
-                
-            });
-//            closeTolPos.addEventListener('click', function(e) {
+        
+//            $('.fa-window-close').on('click', function(event){
+//                event.preventDefault();
+//                console.log($(this).parents('div')[0]);
+//                $(this).parents('div')[0].remove();
 //                
 //            });
-//            
-           
+//      
             
         });
     })();
@@ -188,5 +186,27 @@
 //        
 //    })();
     
+     (function () {
+         
+         document.addEventListener('click', function (e) {
+             if (e.target.closest('.notesDecoration') && e.target.matches('.fa.fa-window-close')) {
+                 e.target.closest('.notesDecoration').parentNode.removeChild(e.target.parentNode);
+             }
+             console.log("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+
+         });
+         document.addEventListener('click', function(e){
+            if (e.target.closest('.notesDecoration') && e.target.matches('.fa-heart')) {
+                    var cloneFavourNode = e.target.closest('.notesDecoration').cloneNode(true);
+                    var favourPosition = document.getElementById('favourPosition');
+                    favourPosition.appendChild(cloneFavourNode);
+                    e.target.closest('.notesDecoration').parentNode.removeChild(e.target.parentNode);
+                    favourPosition.style.cssText = "border-bottom: thick solid #5cb85c; margin-bottom: 5px";
+                    
+                  
+                } 
+         });
+
+     })();
     
 })();

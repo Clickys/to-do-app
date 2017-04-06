@@ -71,19 +71,31 @@
             var dateNode = document.createTextNode(dateTxt);
             var closeIcon = document.createElement('i');
             var favourIcon = document.createElement('i');
+            var checkIcon = document.createElement('i');
+            var paragraphOfUserText = document.createElement('span');
+            paragraphOfUserText.setAttribute('class', 'userTextAtNote');
+        
             
             closeIcon.className += " fa fa-window-close";
             favourIcon.className = " fa fa-heart";
+            checkIcon.setAttribute('class', 'fa fa-check');
+            paragraphOfUserText.appendChild(userTxt);
+            
             
 
             dateEl.appendChild(dateNode);
             dateEl.className += " noteDateAdded";
             
+            
+            
             newEl.appendChild(favourIcon);
+            newEl.appendChild(checkIcon);
             newEl.appendChild(closeIcon);
-            newEl.appendChild(userTxt);
+            newEl.appendChild(paragraphOfUserText);
+            newEl.appendChild(dateEl);
+     
            
-            newEl.innerHTML =  closeIcon.outerHTML + favourIcon.outerHTML  + userTxt.textContent + ' <br> ' + '<br>' + dateEl.outerHTML;
+//            newEl.innerHTML =  checkIcon.outerHTML + closeIcon.outerHTML + favourIcon.outerHTML  + userTxt.textContent + ' <br> ' + '<br>' + dateEl.outerHTML;
             newEl.className += " col-lg-2 col-md-3 col-sm-4 col-12 notesDecoration";
             notesPositionToAdd.appendChild(newEl);
             document.getElementById("addNotesTextarea").value = "";
@@ -192,7 +204,7 @@
              if (e.target.closest('.notesDecoration') && e.target.matches('.fa.fa-window-close')) {
                  e.target.closest('.notesDecoration').parentNode.removeChild(e.target.parentNode);
              }
-             console.log("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+           
 
          });
          document.addEventListener('click', function(e){
@@ -205,6 +217,23 @@
                     
                   
                 } 
+         });
+         
+         document.addEventListener('click', function(e) {
+             if (e.target.closest('.notesDecoration') && e.target.matches('.fa-check')) {
+                 var userText = e.target.closest('.notesDecoration').childNodes[3];
+                 if(window.getComputedStyle(userText).getPropertyValue("text-decoration-line") === "line-through") {
+                     userText.style.textDecoration = "none";
+                     e.target.closest('.notesDecoration').childNodes[1].style.opacity = "0.2";
+                 }else {
+                    userText.style.textDecoration = "line-through";
+                    var isDone = e.target.closest('.notesDecoration').childNodes[1];
+                    e.target.closest('.notesDecoration').childNodes[1].style.opacity = "1";
+   
+                 
+                 }
+             }
+             
          });
 
      })();

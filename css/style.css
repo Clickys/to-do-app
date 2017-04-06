@@ -164,6 +164,10 @@ button#addNotesButton {
 .noteDateAdded {
     font-family: 'Indie Flower', cursive;
     color: #A190D4;
+    position: absolute;
+    top: 1%;
+    display: block;
+    padding-bottom: 5px;
 }
 
 .fa.fa-window-close {
@@ -175,7 +179,7 @@ button#addNotesButton {
 .fa.fa-heart {
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 40%;
     transform: translateX(-50%) translateY(-50%);
     font-size: 25px;
     opacity: 0.2;
@@ -185,4 +189,22 @@ button#addNotesButton {
     opacity: 1;
     color: red;
     font-size: 35px;
+}
+.fa.fa-check {
+    position: absolute;
+    top: 50%;
+    left: 55%;
+    transform: translateX(-50%) translateY(-50%);
+    font-size: 25px;
+    opacity: 0.2;
+    color: #5cb85c;
+}
+.fa.fa-check:hover {
+    opacity: 1;
+    color: #5cb85c;
+    font-size: 35px;
+}
+.userTextAtNote {
+    display: block;
+    padding-top: 10px;
 }

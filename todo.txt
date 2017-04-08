@@ -1,6 +1,9 @@
 6/4/2017
 
 1. If a favour element is on the top and marked as favour , when the user click the heart again to move it down to normal notes.
-2. Make the zoom effect of a note with modal .
+2. Make the zoom effect of a note with modal . (complete)
 3. Fix the note date, to be current time and date, not the dom date. Make a 
 function and call the function insead .
+4. Create a modal for favourite items like important nodes.
+5. Add on toolbar buttons to open modals for favour important and completed notes.
+6. Add table with number of favourite notes,important and completed.

@@ -72,6 +72,7 @@
             var closeIcon = document.createElement('i');
             var favourIcon = document.createElement('i');
             var checkIcon = document.createElement('i');
+            var zoomIcon = document.createElement('i');
             var paragraphOfUserText = document.createElement('span');
             paragraphOfUserText.setAttribute('class', 'userTextAtNote');
         
@@ -79,6 +80,7 @@
             closeIcon.className += " fa fa-window-close";
             favourIcon.className = " fa fa-heart";
             checkIcon.setAttribute('class', 'fa fa-check');
+            zoomIcon.setAttribute('class', 'fa fa-exclamation-circle');
             paragraphOfUserText.appendChild(userTxt);
             
             
@@ -87,7 +89,7 @@
             dateEl.className += " noteDateAdded";
             
             
-            
+            newEl.appendChild(zoomIcon);
             newEl.appendChild(favourIcon);
             newEl.appendChild(checkIcon);
             newEl.appendChild(closeIcon);
@@ -183,21 +185,7 @@
             spanCount.innerHTML = notesTextarea.length;
         })
     })();
-//    (function(){
-//        let notesTextarea = document.getElementById('addNotesTextarea');
-//        let iconsToAdd = document.getElementsByClassName('iconsToAdd')[0];
-//        iconsToAdd.addEventListener('click',function(e){
-//            let iconTarget = e.target; 
-//            let newTextNode = e.target.outerHTML;
-//            let valueOfTextarea = notesTextarea.value;
-//            
-//            notesTextarea.innerText +=  valueOfTextarea + newTextNode  ;
-//            console.log(newTextNode);
-//     
-//        });
-//        
-//    })();
-    
+
      (function () {
          
          document.addEventListener('click', function (e) {
@@ -221,19 +209,51 @@
          
          document.addEventListener('click', function(e) {
              if (e.target.closest('.notesDecoration') && e.target.matches('.fa-check')) {
-                 var userText = e.target.closest('.notesDecoration').childNodes[3];
+                 var userText = e.target.closest('.notesDecoration').childNodes[4];
                  if(window.getComputedStyle(userText).getPropertyValue("text-decoration-line") === "line-through") {
                      userText.style.textDecoration = "none";
-                     e.target.closest('.notesDecoration').childNodes[1].style.opacity = "0.2";
+                     e.target.closest('.notesDecoration').childNodes[2].style.opacity = "0.2";
                  }else {
                     userText.style.textDecoration = "line-through";
-                    var isDone = e.target.closest('.notesDecoration').childNodes[1];
-                    e.target.closest('.notesDecoration').childNodes[1].style.opacity = "1";
+                    var isDone = e.target.closest('.notesDecoration').childNodes[2];
+                    e.target.closest('.notesDecoration').childNodes[2].style.opacity = "1";
    
                  
                  }
              }
              
+         });
+         
+         document.addEventListener('click', function(e){
+            if (e.target.closest('.notesDecoration') && e.target.matches('.fa-exclamation-circle')) {
+                var zoomModal =  document.getElementById('zoomModal');
+                var zoomCon = document.getElementsByClassName('zoomModalCon')[0];
+                var zoomClose = document.getElementsByClassName('zoomClose')[0];
+                var cloneNode = e.target.closest('.notesDecoration').cloneNode(true);
+                var importantNode = document.createElement('i');
+                importantNode.setAttribute('class', 'fa fa-exclamation-triangle importantNode');
+                
+                cloneNode.appendChild(importantNode);
+                cloneNode.className = "importantNodes";
+                
+                for (var i = 2; i >= 0; i--) {
+                    cloneNode.removeChild(cloneNode.childNodes[i]);
+                }
+                
+                zoomCon.appendChild(cloneNode);
+                zoomModal.style.display = "block";
+                
+                zoomClose.addEventListener('click', function(){
+                        zoomModal.style.display ="none";
+                });
+                window.addEventListener('click', function(e){
+                    if (e.target == zoomModal) {
+                        zoomModal.style.display = "none";
+                    }
+                })
+            
+                
+            }
          });
 
      })();

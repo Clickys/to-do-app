@@ -150,6 +150,49 @@ button#addNotesButton {
     font-weight: bold;
     
 }
+.zoomClose {
+    color: red;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: -4%;
+    right: 1%;
+    
+}
+.zoomClose:hover,
+.zoomClose:focus {
+    color: red;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+.zoomModal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4);
+    word-wrap: break-word;
+ 
+
+}
+.zoomModalCon  {
+    background-color: #fefefe;
+    margin: 15% auto;
+    width: 90%;
+    border: 1px solid #888;
+    height: 250px;
+    position: relative;
+       word-wrap: break-word;
+    height: auto;
+}
 
 .close:hover,
 .close:focus {
@@ -176,6 +219,15 @@ button#addNotesButton {
     top: 1%;
     right: 1%;
 }
+.zoomClose > fa.fa-window-close {
+    color: red;
+    top: 5%;
+    right: 1%;
+}
+.fa.fa-window-close:hover,
+.fa.fa-window-close:focus {
+    cursor: pointer;
+}
 .fa.fa-heart {
     position: absolute;
     top: 50%;
@@ -199,6 +251,20 @@ button#addNotesButton {
     opacity: 0.2;
     color: #5cb85c;
 }
+.fa.fa-exclamation-circle {
+    position: absolute;
+    top: 50%;
+    left: 70%;
+    transform: translateX(-50%) translateY(-50%);
+    font-size: 25px;
+    opacity: 0.2;
+    color: #930BED;
+    
+}
+.fa.fa-exclamation-circle:hover {
+    opacity: 1;
+    font-size: 35px;
+}
 .fa.fa-check:hover {
     opacity: 1;
     color: #5cb85c;
@@ -207,4 +273,52 @@ button#addNotesButton {
 .userTextAtNote {
     display: block;
     padding-top: 10px;
+}
+.zoomModalCon {
+    background-color: #A6B0B3; 
+    position: relative;
+    border-radius: 10px;
+}
+.zooModalConTitle {
+    font-family: 'Indie Flower', cursive;
+    font-weight: 600;
+    font-size: 25px;
+    color: white;
+}
+.zoomToolbar {
+    border-bottom: 1px solid #eceeef;
+    padding: 20px;
+    text-align: center;
+}
+.zoomBody {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eceeef;
+    word-wrap: break-word;
+
+}
+
+.importantNodes {
+    color: #616E14;
+    border: solid 1px #BFD62F;
+    background-color: #DAE691;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    padding: 14px 20px;
+    margin: 5px;
+    word-wrap: break-word;
+    width: -webkit-fit-content;
+    /* Fit the content exactly to the div size */
+    height: -webkit-fit-content;
+    width: -moz-fit-content;
+    height: -moz-fit-content;
+    position: relative;
+    background-color: white;
+    width: 98%;
+}
+.importantNode {
+    color: #930BED;
+    position: absolute;
+    top: 40%;
+    left: 90% !important;
 }

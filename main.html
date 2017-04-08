@@ -23,7 +23,7 @@
             <div class="col-lg-4 col-md-4 col-sm-12 searchContainer text-center">
                 <form class="wrapper">
                     <input type="text" name="search" placeholder="Search..">
-                    <button type="button" class="btn btn-sm btn-outline-success searchBtn"></button>
+                    <button type="button" class="btn btn-sm btn-outline-success searchBtn"  ></button>
                 </form>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-6 hvr-grow-rotate">
@@ -33,7 +33,8 @@
                 <p class="headerDate  hvr-wobble-vertical text-center"></p>
             </div>
             <div class="col-lg-2 col-md-2 col-sm-3 col-6">
-                <button type="button" class="btn btn-success hvr-buzz-out" id="addNotesButton"><i class="fa fa-plus"></i></button>
+                <button type="button" class="btn btn-success hvr-buzz-out" id="addNotesButton" data-toggle="tooltip"
+        data-placement="bottom" title="Add a task !!"><i class="fa fa-plus"></i></button>
             </div>
         </div>
         <!-- The Modal -->
@@ -56,12 +57,28 @@
     <div id="zoomModal" class="zoomModal">
         <div class="zoomModalCon">
             <div class="zoomToolbar">
-                <span class="zooModalConTitle">Important Notes !</span>
+                <span class="zooModalConTitle">Important Task !</span>
                 <span class="zoomClose text-right ">&times;</span>
             </div>
 
         </div>
 
+    </div>
+    <div id="favourModal" class="favourModal">
+        <div class="favourModalCon">
+           <div class="favourToolbar">
+                <span class="zooModalConTitle">Favourite Task !</span>
+                <span class="favourClose text-right ">&times;</span>
+           </div>            
+        </div>
+    </div>
+    <div id="doneModal" class="doneModal">
+        <div class="doneModalCon">
+            <div class="doneToolbar">
+                <span class="zooModalConTitle">Completed Task !</span>
+                <span class="doneClose text-right ">&times;</span>
+            </div>
+        </div>
     </div>
     
     <div class="container-fluid">

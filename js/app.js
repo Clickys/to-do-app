@@ -189,72 +189,111 @@
      (function () {
          
          document.addEventListener('click', function (e) {
-             if (e.target.closest('.notesDecoration') && e.target.matches('.fa.fa-window-close')) {
+             if (e.target.closest('.notesDecoration') && e.target.matches('.fa-heart')) {
+                 var cloneFavourNode = e.target.closest('.notesDecoration').cloneNode(true);
+                 var favourModal = document.getElementById('favourModal');
+                 var favourCon = document.getElementsByClassName('favourModalCon')[0];
+                 var favourClose = document.getElementsByClassName('favourClose')[0];
+                 var createFavourIcon = document.createElement('i');
+                
+                 createFavourIcon.setAttribute('class', 'fa fa-heart favourIconNodes')
+                 cloneFavourNode.appendChild(createFavourIcon);
+                 cloneFavourNode.setAttribute('class', 'favourNotesModal');
+                 favourCon.appendChild(cloneFavourNode);
+                 favourModal.style.display = "block";
+                 for (var i = 2; i >= 0; i--) {
+                     cloneFavourNode.removeChild(cloneFavourNode.childNodes[i]);
+                 }
                  e.target.closest('.notesDecoration').parentNode.removeChild(e.target.parentNode);
+
+                 favourClose.addEventListener('click', function () {
+                     favourModal.style.display = "none";
+                 });
+                 
+                 window.addEventListener('click', function(e){
+                     if (e.target == favourModal){
+                         favourModal.style.display = "none";
+                     }
+                 })
+
              }
-           
+         });
+         document.addEventListener('click', function (e) {
+             if (e.target.closest('.notesDecoration') && e.target.matches('.fa-check')) {
+                 var doneModal = document.getElementById('doneModal');
+                 var doneModalCon = document.getElementsByClassName('doneModalCon')[0];
+                 var cloneDoneNode = e.target.closest('.notesDecoration').cloneNode(true);
+                 var doneClose = document.getElementsByClassName('doneClose')[0];
+                 var createCheckIcon = document.createElement('i');
+                 
+                 createCheckIcon.setAttribute('class', 'fa fa-check checkIconNodes');
+                 cloneDoneNode.appendChild(createCheckIcon);
+                 cloneDoneNode.setAttribute('class', 'doneNotesModal');
+                 doneModalCon.appendChild(cloneDoneNode);
+
+                 doneModal.style.display = "block";
+                 for (var i = 2; i >= 0; i--) {
+                     cloneDoneNode.removeChild(cloneDoneNode.childNodes[i]);
+                 }
+                 e.target.closest('.notesDecoration').parentNode.removeChild(e.target.parentNode);
+                
+                 window.addEventListener('click', function(e){
+                     if (e.target == doneModal){
+                         doneModal.style.display = "none";
+                     }
+                 });
+                 doneClose.addEventListener('click', function(e){
+                    doneModal.style.display = "none"; 
+                 });
+             }
+         });
+             
+         
+         
+         document.addEventListener('click', function (e) {
+             if (e.target.closest('.notesDecoration') && e.target.matches('.fa-exclamation-circle')) {
+                 var zoomModal = document.getElementById('zoomModal');
+                 var zoomCon = document.getElementsByClassName('zoomModalCon')[0];
+                 var zoomClose = document.getElementsByClassName('zoomClose')[0];
+                 var cloneNode = e.target.closest('.notesDecoration').cloneNode(true);
+                 var importantNode = document.createElement('i');
+                 importantNode.setAttribute('class', 'fa fa-exclamation-circle modalIconNodes');
+
+                 cloneNode.appendChild(importantNode);
+                 cloneNode.className = "importantNodes";
+
+                 for (var i = 2; i >= 0; i--) {
+                     cloneNode.removeChild(cloneNode.childNodes[i]);
+                 }
+
+                 zoomCon.appendChild(cloneNode);
+                 zoomModal.style.display = "block";
+                 e.target.closest('.notesDecoration').parentNode.removeChild(e.target.parentNode);
+
+                 zoomClose.addEventListener('click', function () {
+                     zoomModal.style.display = "none";
+                 });
+                 window.addEventListener('click', function (e) {
+                     if (e.target == zoomModal) {
+                         zoomModal.style.display = "none";
+                     }
+                 })
+
+
+             }
+         });
+         document.addEventListener('click', function (e) {
+             if (e.target.closest('.importantNodes') && e.target.matches('.fa.fa-window-close')) {
+                 e.target.closest('.importantNodes').parentNode.removeChild(e.target.parentNode);
+             } else if (e.target.closest('.favourNotesModal') && e.target.matches('.fa.fa-window-close')) {
+                 e.target.closest('.favourNotesModal').parentNode.removeChild(e.target.parentNode);
+             } else if (e.target.closest('.doneNotesModal') && e.target.matches('.fa.fa-window-close')) {
+                 e.target.closest('.doneNotesModal').parentNode.removeChild(e.target.parentNode);
+             }
+
 
          });
-         document.addEventListener('click', function(e){
-            if (e.target.closest('.notesDecoration') && e.target.matches('.fa-heart')) {
-                    var cloneFavourNode = e.target.closest('.notesDecoration').cloneNode(true);
-                    var favourPosition = document.getElementById('favourPosition');
-                    favourPosition.appendChild(cloneFavourNode);
-                    e.target.closest('.notesDecoration').parentNode.removeChild(e.target.parentNode);
-                    favourPosition.style.cssText = "border-bottom: thick solid #5cb85c; margin-bottom: 5px";
-                    
-                  
-                } 
-         });
          
-         document.addEventListener('click', function(e) {
-             if (e.target.closest('.notesDecoration') && e.target.matches('.fa-check')) {
-                 var userText = e.target.closest('.notesDecoration').childNodes[4];
-                 if(window.getComputedStyle(userText).getPropertyValue("text-decoration-line") === "line-through") {
-                     userText.style.textDecoration = "none";
-                     e.target.closest('.notesDecoration').childNodes[2].style.opacity = "0.2";
-                 }else {
-                    userText.style.textDecoration = "line-through";
-                    var isDone = e.target.closest('.notesDecoration').childNodes[2];
-                    e.target.closest('.notesDecoration').childNodes[2].style.opacity = "1";
-   
-                 
-                 }
-             }
-             
-         });
-         
-         document.addEventListener('click', function(e){
-            if (e.target.closest('.notesDecoration') && e.target.matches('.fa-exclamation-circle')) {
-                var zoomModal =  document.getElementById('zoomModal');
-                var zoomCon = document.getElementsByClassName('zoomModalCon')[0];
-                var zoomClose = document.getElementsByClassName('zoomClose')[0];
-                var cloneNode = e.target.closest('.notesDecoration').cloneNode(true);
-                var importantNode = document.createElement('i');
-                importantNode.setAttribute('class', 'fa fa-exclamation-triangle importantNode');
-                
-                cloneNode.appendChild(importantNode);
-                cloneNode.className = "importantNodes";
-                
-                for (var i = 2; i >= 0; i--) {
-                    cloneNode.removeChild(cloneNode.childNodes[i]);
-                }
-                
-                zoomCon.appendChild(cloneNode);
-                zoomModal.style.display = "block";
-                
-                zoomClose.addEventListener('click', function(){
-                        zoomModal.style.display ="none";
-                });
-                window.addEventListener('click', function(e){
-                    if (e.target == zoomModal) {
-                        zoomModal.style.display = "none";
-                    }
-                })
-            
-                
-            }
-         });
 
      })();
     

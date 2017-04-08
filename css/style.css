@@ -160,8 +160,40 @@ button#addNotesButton {
     right: 1%;
     
 }
+.favourClose {
+    color: red;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: -4%;
+    right: 1%;
+    
+}
+.doneClose {
+    color: red;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: -4%;
+    right: 1%;
+    
+}
 .zoomClose:hover,
 .zoomClose:focus {
+    color: red;
+    text-decoration: none;
+    cursor: pointer;
+}
+.favourClose:hover,
+.favourClose:focus {
+    color: red;
+    text-decoration: none;
+    cursor: pointer;
+}
+.doneClose:hover,
+.doneClose:focus {
     color: red;
     text-decoration: none;
     cursor: pointer;
@@ -183,8 +215,36 @@ button#addNotesButton {
  
 
 }
+.favourModal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4);
+    word-wrap: break-word;
+ 
+}
+.doneModal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4);
+    word-wrap: break-word;
+ 
+}
 .zoomModalCon  {
-    background-color: #fefefe;
+    background-color: #A6B0B3;
     margin: 15% auto;
     width: 90%;
     border: 1px solid #888;
@@ -192,7 +252,32 @@ button#addNotesButton {
     position: relative;
        word-wrap: break-word;
     height: auto;
+    border-radius: 10px;
+    
 }
+.favourModalCon {
+    background-color: #A6B0B3;
+    margin: 15% auto;
+    width: 90%;
+    border: 1px solid #888;
+    height: 250px;
+    position: relative;
+    word-wrap: break-word;
+    height: auto;
+    border-radius: 10px;
+}
+.doneModalCon {
+    background-color: #A6B0B3;
+    margin: 15% auto;
+    width: 90%;
+    border: 1px solid #888;
+    height: 250px;
+    position: relative;
+    word-wrap: break-word;
+    height: auto;
+    border-radius: 10px;
+}
+
 
 .close:hover,
 .close:focus {
@@ -274,11 +359,6 @@ button#addNotesButton {
     display: block;
     padding-top: 10px;
 }
-.zoomModalCon {
-    background-color: #A6B0B3; 
-    position: relative;
-    border-radius: 10px;
-}
 .zooModalConTitle {
     font-family: 'Indie Flower', cursive;
     font-weight: 600;
@@ -289,12 +369,6 @@ button#addNotesButton {
     border-bottom: 1px solid #eceeef;
     padding: 20px;
     text-align: center;
-}
-.zoomBody {
-    padding-bottom: 10px;
-    border-bottom: 1px solid #eceeef;
-    word-wrap: break-word;
-
 }
 
 .importantNodes {
@@ -316,9 +390,68 @@ button#addNotesButton {
     background-color: white;
     width: 98%;
 }
-.importantNode {
+.favourNotesModal {
+        color: #616E14;
+    border: solid 1px #BFD62F;
+    background-color: #DAE691;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    padding: 14px 20px;
+    margin: 5px;
+    word-wrap: break-word;
+    width: -webkit-fit-content;
+    /* Fit the content exactly to the div size */
+    height: -webkit-fit-content;
+    width: -moz-fit-content;
+    height: -moz-fit-content;
+    position: relative;
+    background-color: white;
+    width: 98%;
+}
+.doneNotesModal {
+        color: #616E14;
+    border: solid 1px #BFD62F;
+    background-color: #DAE691;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    padding: 14px 20px;
+    margin: 5px;
+    word-wrap: break-word;
+    width: -webkit-fit-content;
+    /* Fit the content exactly to the div size */
+    height: -webkit-fit-content;
+    width: -moz-fit-content;
+    height: -moz-fit-content;
+    position: relative;
+    background-color: white;
+    width: 98%;
+}
+.modalIconNodes {
     color: #930BED;
     position: absolute;
     top: 40%;
     left: 90% !important;
+    opacity: 1 !important;
+}
+.favourIconNodes {
+    color: red !important;
+    position: absolute;
+    top: 40%;
+    left: 90% !important;
+    opacity: 1 !important;
+    
+}
+.doneToolbar, .favourToolbar {
+     border-bottom: 1px solid #eceeef;
+    padding: 20px;
+    text-align: center;
+}
+.checkIconNodes {
+    color: #5cb85c !important;
+    position: absolute;
+    top: 40%;
+    left: 90% !important;
+    opacity: 1 !important; 
 }

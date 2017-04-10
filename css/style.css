@@ -250,15 +250,15 @@ button#addNotesButton {
     border: 1px solid #888;
     height: 250px;
     position: relative;
-       word-wrap: break-word;
+    word-wrap: break-word;
     height: auto;
     border-radius: 10px;
     
 }
 .favourModalCon {
-    background-color: #A6B0B3;
+    background-color: #D9534F;
     margin: 15% auto;
-    width: 90%;
+    width: 50%;
     border: 1px solid #888;
     height: 250px;
     position: relative;
@@ -266,6 +266,8 @@ button#addNotesButton {
     height: auto;
     border-radius: 10px;
 }
+
+
 .doneModalCon {
     background-color: #A6B0B3;
     margin: 15% auto;
@@ -313,7 +315,7 @@ button#addNotesButton {
 .fa.fa-window-close:focus {
     cursor: pointer;
 }
-.fa.fa-heart {
+.notesDecoration .fa.fa-heart {
     position: absolute;
     top: 50%;
     left: 40%;
@@ -322,12 +324,12 @@ button#addNotesButton {
     opacity: 0.2;
     color: red;
 }
-.fa.fa-heart:hover {
+.notesDecoration .fa.fa-heart:hover {
     opacity: 1;
     color: red;
     font-size: 35px;
 }
-.fa.fa-check {
+.notesDecoration .fa.fa-check {
     position: absolute;
     top: 50%;
     left: 55%;
@@ -336,7 +338,7 @@ button#addNotesButton {
     opacity: 0.2;
     color: #5cb85c;
 }
-.fa.fa-exclamation-circle {
+.notesDecoration .fa.fa-exclamation-circle {
     position: absolute;
     top: 50%;
     left: 70%;
@@ -346,11 +348,11 @@ button#addNotesButton {
     color: #930BED;
     
 }
-.fa.fa-exclamation-circle:hover {
+.notesDecoration .fa.fa-exclamation-circle:hover {
     opacity: 1;
     font-size: 35px;
 }
-.fa.fa-check:hover {
+.notesDecoration .fa.fa-check:hover {
     opacity: 1;
     color: #5cb85c;
     font-size: 35px;
@@ -391,9 +393,8 @@ button#addNotesButton {
     width: 98%;
 }
 .favourNotesModal {
-        color: #616E14;
-    border: solid 1px #BFD62F;
-    background-color: #DAE691;
+    color: white;
+    border: solid 1px white;
     -moz-border-radius: 6px;
     -webkit-border-radius: 6px;
     border-radius: 6px;
@@ -454,4 +455,12 @@ button#addNotesButton {
     top: 40%;
     left: 90% !important;
     opacity: 1 !important; 
+}
+.notifyBlock {
+    transform: rotate(20deg);
+    
+}
+.readMeBox {
+    font-family: 'Indie Flower', cursive;
+    color: white;
 }

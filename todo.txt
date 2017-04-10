@@ -4,3 +4,6 @@
 function and call the function insead .
 5. Add on toolbar buttons to open modals for favour important and completed notes.
 6. Add table with number of favourite notes,important and completed.
+8. Change the classes of bootstrap to the info box on the right and manual position 
+it to the right with z-index: 1 and opacity .
+9. Change the colors of complete task and important task!

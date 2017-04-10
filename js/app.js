@@ -98,7 +98,7 @@
      
            
 //            newEl.innerHTML =  checkIcon.outerHTML + closeIcon.outerHTML + favourIcon.outerHTML  + userTxt.textContent + ' <br> ' + '<br>' + dateEl.outerHTML;
-            newEl.className += " col-lg-2 col-md-3 col-sm-4 col-12 notesDecoration";
+            newEl.className += " col-xl-2 col-lg-2 col-md-3 col-sm-4 col-12 notesDecoration";
             notesPositionToAdd.appendChild(newEl);
             document.getElementById("addNotesTextarea").value = "";
         

@@ -244,7 +244,7 @@ button#addNotesButton {
  
 }
 .zoomModalCon  {
-    background-color: #A6B0B3;
+    background-color: #D9534F;
     margin: 15% auto;
     width: 90%;
     border: 1px solid #888;
@@ -269,7 +269,7 @@ button#addNotesButton {
 
 
 .doneModalCon {
-    background-color: #A6B0B3;
+    background-color: #D9534F;
     margin: 15% auto;
     width: 90%;
     border: 1px solid #888;
@@ -411,9 +411,8 @@ button#addNotesButton {
     width: 98%;
 }
 .doneNotesModal {
-        color: #616E14;
-    border: solid 1px #BFD62F;
-    background-color: #DAE691;
+    color: white;
+    border: solid 1px white;
     -moz-border-radius: 6px;
     -webkit-border-radius: 6px;
     border-radius: 6px;
@@ -457,10 +456,46 @@ button#addNotesButton {
     opacity: 1 !important; 
 }
 .notifyBlock {
-    transform: rotate(20deg);
+    transform: rotate(25deg);
+    width: 15%;
+    position: absolute;
+    right: 2%;
+    top: 2%;
+    font-size: 20px;
     
 }
+
 .readMeBox {
     font-family: 'Indie Flower', cursive;
     color: white;
+    position: relative;
+}
+
+.notesTableContent {
+    background-color: #5cb85c;
+    border-radius: 10px;
+    font-size: 25px;
+   
+
+}
+.notesTableContent > p.readMeBox > i.fa.fa-heart {
+    position: absolute;
+    top: 10%;
+    left: 80%;
+    color: #D9534F;
+    font-size: 30px;
+}
+.heartNumber{
+    color: white;
+    position: absolute;
+    top: 8%;
+    left: 30%;
+    font-size: 25px;
+    font-weight: 700;
+    
+}
+@media only screen and  (max-width: 570px) { 
+    .notifyBlock {
+        display: none;
+    }
 }

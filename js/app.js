@@ -289,6 +289,9 @@
                  e.target.closest('.favourNotesModal').parentNode.removeChild(e.target.parentNode);
              } else if (e.target.closest('.doneNotesModal') && e.target.matches('.fa.fa-window-close')) {
                  e.target.closest('.doneNotesModal').parentNode.removeChild(e.target.parentNode);
+             } else if (e.target.closest('.notesDecoration') && e.target.matches('.fa.fa-window-close')) {
+                    e.target.closest('.notesDecoration').parentNode.removeChild(e.target.parentNode);
+                 
              }
 
 
@@ -296,5 +299,21 @@
          
 
      })();
+    
+    (function(){
+        setInterval(updateNotes,1000);
+
+        function updateNotes(){
+            let howManyNotesAreOpen = document.getElementsByClassName('favourNotesModal').length;
+            var faHeartTable = document.getElementById("faHeartTable");
+            faHeartTable.innerHTML = ' ' + '<span class="heartNumber">' + howManyNotesAreOpen + '</span>';
+        }
+        
+        
+        
+        
+        
+        
+    })();
     
 })();

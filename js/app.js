@@ -301,17 +301,32 @@
      })();
     
     (function(){
-        setInterval(updateNotes,1000);
+        setInterval(updateNotesCount,1000);
 
-        function updateNotes(){
+        function updateNotesCount(){
+            updateFavourNotes();
+            updateImportantNotes();
+            doneNotes();
+        }
+        
+        function updateFavourNotes(){
             let howManyNotesAreOpen = document.getElementsByClassName('favourNotesModal').length;
             var faHeartTable = document.getElementById("faHeartTable");
-            faHeartTable.innerHTML = ' ' + '<span class="heartNumber">' + howManyNotesAreOpen + '</span>';
+            faHeartTable.innerHTML = ' ' + howManyNotesAreOpen ;
         }
         
         
-        
-        
+        function updateImportantNotes(){
+            var howManyImportant = document.getElementsByClassName('importantNodes').length;
+            var importantTable = document.getElementById('importantTable');
+            importantTable.innerHTML = ' ' + howManyImportant;
+        }
+        function doneNotes(){
+            var howManyDone = document.getElementsByClassName('doneNotesModal').length;
+            var doneTable = document.getElementById('doneTable');
+            
+            doneTable.innerHTML = '' + howManyDone;
+        }
         
         
     })();

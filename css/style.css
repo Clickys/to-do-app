@@ -478,21 +478,50 @@ button#addNotesButton {
    
 
 }
+#faHeartTable {
+    position: relative;
+}
+#importantTable {
+    padding-left: 6px;
+}
+.heartNumber{
+    font-size: 40px;
+    color: white;
+    
+}
 .notesTableContent > p.readMeBox > i.fa.fa-heart {
-    position: absolute;
-    top: 10%;
-    left: 80%;
     color: #D9534F;
     font-size: 30px;
 }
-.heartNumber{
-    color: white;
+.notesTableContent > p.readMeBox > i.fa.fa-exclamation-circle {
+    color: #930BED;
+    font-size: 30px;
     position: absolute;
-    top: 8%;
-    left: 30%;
-    font-size: 25px;
-    font-weight: 700;
-    
+}
+.notesTableContent > p.readMeBox > i.fa.fa-check {
+    color: rgb(212, 225, 87);
+    font-size: 30px;
+    position: absolute;
+}
+
+.mainNoteButtons {
+   padding-top: 50px;
+}
+.mainNoteButtons > i {
+    padding-right: 10%;
+    font-size: 45px;
+}
+.mainNoteButtons > i.fa.fa-heart {
+    color: #D9534F;
+    cursor: pointer;
+}
+.mainNoteButtons > i.fa-exclamation-circle {
+    color: #930BED;
+    cursor: pointer;
+}
+.mainNoteButtons > i.fa-check {
+    color: rgb(212, 225, 87);
+    cursor: pointer;
 }
 @media only screen and  (max-width: 570px) { 
     .notifyBlock {

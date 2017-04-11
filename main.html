@@ -56,11 +56,18 @@
     </div>
     <div class="container-fluid">
         <div class="row">
-           <div class="col-xl-12 col-lg-12 notesTableContent">
-               <p class="readMeBox"><i class="fa fa-heart" aria-hidden="true" id="faHeartTable"></i>Your favourite notes are </p>
-               <p class="readMeBox"><i class="fa fa-exclamation-circle" aria-hidden="true"></i></p>
-               <p class="readMeBox"><i class="fa fa-check" aria-hidden="true"></i></p>
-           </div>
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 notesTableContent">
+                <div class="row">
+                    <div class="col-xl-6 col-md-6 col-sm-12 col-12  notesTableContent">
+                        <p class="readMeBox">Your favourite task are <i class="fa fa-heart" aria-hidden="true" id="faHeartTable"></i> </p>
+                        <p class="readMeBox">Your important task are <i class="fa fa-exclamation-circle" aria-hidden="true " id="importantTable"></i></p>
+                        <p class="readMeBox">Your completed task are <i class="fa fa-check" aria-hidden="true" id="doneTable"></i></p>
+                    </div>
+                    <div class="col-xl-6 col-md-6 col-sm-12 col-12">
+                        <p class="mainNoteButtons"><i class="fa fa-heart" aria-hidden="true" id="favourOpenModal" ></i><i class="fa fa-exclamation-circle" aria-hidden="true" id="importantOpenModal"></i><i class="fa fa-check" aria-hidden="true" id="doneOpenModal"></i></p>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="rightBoxWrapper ">
             <div class="notifyBlock card card-inverse card-danger text-center">
@@ -116,6 +123,7 @@
     <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/app.js"></script>
+    <script src="js/app2.js"></script>
 </body>
 
 </html>

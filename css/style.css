@@ -246,7 +246,7 @@ button#addNotesButton {
 .zoomModalCon  {
     background-color: #D9534F;
     margin: 15% auto;
-    width: 90%;
+    width: 50%;
     border: 1px solid #888;
     height: 250px;
     position: relative;
@@ -271,7 +271,7 @@ button#addNotesButton {
 .doneModalCon {
     background-color: #D9534F;
     margin: 15% auto;
-    width: 90%;
+    width: 50%;
     border: 1px solid #888;
     height: 250px;
     position: relative;
@@ -523,6 +523,7 @@ button#addNotesButton {
     color: rgb(212, 225, 87);
     cursor: pointer;
 }
+
 @media only screen and  (max-width: 570px) { 
     .notifyBlock {
         display: none;

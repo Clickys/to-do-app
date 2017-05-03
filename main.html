@@ -44,7 +44,6 @@
                 <span class="close text-right ">&times;</span>
                 <form id="newNoteForm">
                     <div class="form-group">
-<!--                        <span class="iconsToAdd"><i class="fa fa-address-book" aria-hidden="true"></i><i class="fa fa-id-badge" aria-hidden="true"></i></span>-->
                         <label for="addNotesTextarea\" style="color: #3F7FBF">Add notes !</label>
                         <textarea class="form-control" id="addNotesTextarea" placeholder="Type your notes max 100 chars" rows="3" maxlength="100"></textarea>
                         <input class="btn btn-success btn-sm" type="submit" value="Add" id="btnAddNotes">
@@ -58,13 +57,8 @@
         <div class="row">
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 notesTableContent">
                 <div class="row">
-                    <div class="col-xl-6 col-md-6 col-sm-12 col-12  notesTableContent">
-                        <p class="readMeBox">Your favourite task are <i class="fa fa-heart" aria-hidden="true" id="faHeartTable"></i> </p>
-                        <p class="readMeBox">Your important task are <i class="fa fa-exclamation-circle" aria-hidden="true " id="importantTable"></i></p>
-                        <p class="readMeBox">Your completed task are <i class="fa fa-check" aria-hidden="true" id="doneTable"></i></p>
-                    </div>
-                    <div class="col-xl-6 col-md-6 col-sm-12 col-12">
-                        <p class="mainNoteButtons"><i class="fa fa-heart hvr-pulse-grow" aria-hidden="true" id="favourOpenModal" ></i><i class="fa fa-exclamation-circle hvr-pulse-grow" aria-hidden="true" id="importantOpenModal"></i><i class="fa fa-check hvr-pulse-grow" aria-hidden="true" id="doneOpenModal"></i></p>
+                    <div class="col-xl-6 col-md-6 col-sm-12 col-12 offset-xl-4 offset-lg-4 offset-md-4">
+                        <p class="mainNoteButtons"><i class="fa fa-heart hvr-pulse-grow" aria-hidden="true" id="favourOpenModal" ><span id="faHeartTable"> </span></i><i class="fa fa-exclamation-circle hvr-pulse-grow" aria-hidden="true" id="importantOpenModal"><span id="importantTable"></span> </i><i class="fa fa-check hvr-pulse-grow" aria-hidden="true" id="doneOpenModal"><span id="doneTable"></span></i></p>
                     </div>
                 </div>
             </div>

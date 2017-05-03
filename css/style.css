@@ -483,6 +483,7 @@ button#addNotesButton {
 }
 #importantTable {
     padding-left: 6px;
+    position: relative;
 }
 .heartNumber{
     font-size: 40px;

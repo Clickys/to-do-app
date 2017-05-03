@@ -293,8 +293,11 @@
                     e.target.closest('.notesDecoration').parentNode.removeChild(e.target.parentNode);
                  
              }
-
-             console.log(e.target);
+             if (e.target.closest('.favourModalCon') && e.target.matches('.favourClose')){
+                 e.target.closest('.favourModal').style.display ="none";
+             }else if (e.target.closest('.doneModalCon') && e.target.matches('.doneClose')) {
+                 e.target.closest('.doneModal').style.display = "none";
+             }
          });
          
 

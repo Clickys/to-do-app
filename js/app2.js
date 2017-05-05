@@ -130,6 +130,8 @@
           var day = new Date(year + "-" + month + "-01").getDay();
           day = (day===0) ? 7 : day;
           var howManyDays  = daysInThisMonth();
+          var currentDay = new Date().getDate();
+        console.log(currentDay);
         
 
       var calendarTable = document.getElementById('calendarTable').tBodies[0];
@@ -139,19 +141,36 @@
                         if (rows[i] == rows[0]) { 
                             var k = 1;
                             for(var j = day; j < rows[i].cells.length; j++) {
-                                rows[i].cells[j].innerHTML = k;
-                                k++
+                                if ( k <= howManyDays ) {
+                                    rows[i].cells[j].innerHTML = k;
+                                    k++;
+                                } else break;
                             }
                         } else {
                             for(var j = 0; j < rows[i].cells.length; j++) {
-                                rows[i].cells[j].innerHTML = k;
-                                k++;
+                                if ( k <= howManyDays ) {
+                                    rows[i].cells[j].innerHTML = k;
+                                    k++;
+                                }else break;
                             }
                         }
                            
                 
             }
+            var getElPos = document.getElementsByClassName('calendarModalConTitle')[0];
+            var monthsArray = ['Jan.', 'Feb.', 'Mar.', 'Apr.', 'May', 'Jun.', 'Jul.', 'Aug.', 'Sept.', 'Oct.', 'Nov.', 'Dec.'];
+            var monthNow = new Date().getMonth();
+            monthSpan = document.createElement('span');
+            monthText = document.createTextNode(' ' + monthsArray[monthNow]);
+            monthSpan.appendChild(monthText);
+            monthSpan.className = 'monthString';
+            
+            getElPos.appendChild(monthSpan);
+            var monthString = document.getElementsByClassName('monthString')[0];
+            console.log(monthString);
+            monthString.style.color  = 'green';
         }
+        
     fillCalendar();
 
     })();

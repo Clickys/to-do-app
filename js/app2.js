@@ -37,6 +37,7 @@
         });
         
     })();
+    
     var notesPositionToAdd = document.getElementById('notesPosition');
     var newNote = document.getElementById('newNoteForm');
     var notesTextareaBtn = document.getElementById('btnAddNotes');
@@ -94,5 +95,65 @@
             document.getElementById("addNotesTextarea").value = "";
         };
     });
+    function clean(node)
+    {
+      for(var n = 0; n < node.childNodes.length; n ++)
+      {
+        var child = node.childNodes[n];
+        if
+        (
+          child.nodeType === 8 
+          || 
+          (child.nodeType === 3 && !/\S/.test(child.nodeValue))
+        )
+        {
+          node.removeChild(child);
+          n --;
+        }
+        else if(child.nodeType === 1)
+        {
+          clean(child);
+        }
+      }
+    }
+    clean(document.body);
+    (function(){
+        function daysInThisMonth() {
+          var now = new Date();
+          return new Date(now.getFullYear(), now.getMonth()+1, 0).getDate();
+        }
+      
+             var year = new Date().getFullYear();
+          var month = new Date().getMonth()+1;
+        
+        
+          var day = new Date(year + "-" + month + "-01").getDay();
+          day = (day===0) ? 7 : day;
+          var howManyDays  = daysInThisMonth();
+        
+
+      var calendarTable = document.getElementById('calendarTable').tBodies[0];
+      var rows = document.getElementById('calendarTable').tBodies[0].rows;
+        function fillCalendar() {
+                for(var i = 0; i < rows.length; i++) {                  
+                        if (rows[i] == rows[0]) { 
+                            var k = 1;
+                            for(var j = day; j < rows[i].cells.length; j++) {
+                                rows[i].cells[j].innerHTML = k;
+                                k++
+                            }
+                        } else {
+                            for(var j = 0; j < rows[i].cells.length; j++) {
+                                rows[i].cells[j].innerHTML = k;
+                                k++;
+                            }
+                        }
+                           
+                
+            }
+        }
+    fillCalendar();
+
+    })();
     
 })();

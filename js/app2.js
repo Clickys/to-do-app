@@ -117,60 +117,81 @@
       }
     }
     clean(document.body);
-    (function(){
-        function daysInThisMonth() {
-          var now = new Date();
-          return new Date(now.getFullYear(), now.getMonth()+1, 0).getDate();
-        }
-      
-             var year = new Date().getFullYear();
-          var month = new Date().getMonth()+1;
-        
-        
-          var day = new Date(year + "-" + month + "-01").getDay();
-          day = (day===0) ? 7 : day;
-          var howManyDays  = daysInThisMonth();
-          var currentDay = new Date().getDate();
-        console.log(currentDay);
+    (function () {
+            function daysInThisMonth() {
+                var now = new Date();
+                return new Date(now.getFullYear(), now.getMonth() + 1, 0).getDate();
+            }
+
+            var year = new Date().getFullYear();
+            var month = new Date().getMonth() + 1;
+    
+
+
+            var day = new Date(year + "-" + month + "-01").getDay();
+            day = (day === 0) ? 7 : day;
+            var howManyDays = daysInThisMonth();
+            var currentDay = new Date().getDate();
+            
+           
         
 
-      var calendarTable = document.getElementById('calendarTable').tBodies[0];
-      var rows = document.getElementById('calendarTable').tBodies[0].rows;
-        function fillCalendar() {
-                for(var i = 0; i < rows.length; i++) {                  
-                        if (rows[i] == rows[0]) { 
-                            var k = 1;
-                            for(var j = day; j < rows[i].cells.length; j++) {
-                                if ( k <= howManyDays ) {
-                                    rows[i].cells[j].innerHTML = k;
-                                    k++;
-                                } else break;
+
+            var calendarTable = document.getElementById('calendarTable').tBodies[0];
+            var rows = document.getElementById('calendarTable').tBodies[0].rows;
+
+            function fillCalendar() {
+                for (var i = 0; i < rows.length; i++) {
+                    if (rows[i] == rows[0]) {
+                        var k = 1;
+                        for (var j = day; j < rows[i].cells.length; j++) {
+                            if (k === currentDay) {
+                                rows[i].cells[j].style.backgroundColor = 'white';
                             }
-                        } else {
-                            for(var j = 0; j < rows[i].cells.length; j++) {
-                                if ( k <= howManyDays ) {
-                                    rows[i].cells[j].innerHTML = k;
-                                    k++;
-                                }else break;
-                            }
+                            if (k <= howManyDays) {
+                                rows[i].cells[j].innerHTML = k;
+                                k++;
+                            } else break;
                         }
-                           
-                
+                    } else {
+                        for (var j = 0; j < rows[i].cells.length; j++) {
+                            if (k === currentDay) {
+                                rows[i].cells[j].style.backgroundColor = 'white';
+                            }
+                            if (k <= howManyDays) {
+                                rows[i].cells[j].innerHTML = k;
+                                k++;
+                            } else break;
+                        }
+                    }
+
+
+                }
+                var calendarModal = document.getElementById('calendarModal');
+                var calendarPos = document.getElementsByClassName('headerDate')[0];
+
+                window.addEventListener('click', function (e) {
+                    if (e.target == calendarModal) {
+                        calendarModal.style.display = "none";
+                    }
+                })
+
+                calendarPos.addEventListener('click', function (e) {
+                    calendarModal.style.display = "block";
+                })
+
+                var getElPos = document.getElementsByClassName('calendarModalConTitle')[0];
+                var monthsArray = ['Jan.', 'Feb.', 'Mar.', 'Apr.', 'May', 'Jun.', 'Jul.', 'Aug.', 'Sept.', 'Oct.', 'Nov.', 'Dec.'];
+                var monthNow = new Date().getMonth();
+                monthSpan = document.createElement('span');
+                monthText = document.createTextNode(' ' + monthsArray[monthNow]);
+                monthSpan.appendChild(monthText);
+                monthSpan.className = 'monthString';
+
+                getElPos.appendChild(monthSpan);
+                var monthString = document.getElementsByClassName('monthString')[0];
+                monthString.style.color = '#5cb85c';
             }
-            var getElPos = document.getElementsByClassName('calendarModalConTitle')[0];
-            var monthsArray = ['Jan.', 'Feb.', 'Mar.', 'Apr.', 'May', 'Jun.', 'Jul.', 'Aug.', 'Sept.', 'Oct.', 'Nov.', 'Dec.'];
-            var monthNow = new Date().getMonth();
-            monthSpan = document.createElement('span');
-            monthText = document.createTextNode(' ' + monthsArray[monthNow]);
-            monthSpan.appendChild(monthText);
-            monthSpan.className = 'monthString';
-            
-            getElPos.appendChild(monthSpan);
-            var monthString = document.getElementsByClassName('monthString')[0];
-            console.log(monthString);
-            monthString.style.color  = 'green';
-        }
-        
     fillCalendar();
 
     })();

@@ -23,7 +23,7 @@
             <div class="col-lg-4 col-md-4 col-sm-12 searchContainer text-center">
                 <form class="wrapper">
                     <input type="text" name="search" placeholder="Search..">
-                    <button type="button" class="btn btn-sm btn-outline-success searchBtn"  ></button>
+                    <button type="button" class="btn btn-sm btn-outline-success searchBtn"></button>
                 </form>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-6 hvr-grow-rotate">
@@ -33,13 +33,12 @@
                 <p class="headerDate  hvr-wobble-vertical text-center"></p>
             </div>
             <div class="col-lg-2 col-md-2 col-sm-3 col-6">
-                <button type="button" class="btn btn-success hvr-buzz-out" id="addNotesButton" data-toggle="tooltip"
-        data-placement="bottom" title="Add a task !!"><i class="fa fa-plus"></i></button>
+                <button type="button" class="btn btn-success hvr-buzz-out" id="addNotesButton" data-toggle="tooltip" data-placement="bottom" title="Add a task !!"><i class="fa fa-plus"></i></button>
             </div>
         </div>
         <!-- The Modal -->
         <div id="myModal" class="modal">
-        <!-- Modal content -->
+            <!-- Modal content -->
             <div class="modal-content">
                 <span class="close text-right ">&times;</span>
                 <form id="newNoteForm">
@@ -58,21 +57,21 @@
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 notesTableContent">
                 <div class="row">
                     <div class="col-xl-6 col-md-6 col-sm-12 col-12 offset-xl-4 offset-lg-4 offset-md-4">
-                        <p class="mainNoteButtons"><i class="fa fa-heart hvr-pulse-grow" aria-hidden="true" id="favourOpenModal" ><span id="faHeartTable"> </span></i><i class="fa fa-exclamation-circle hvr-pulse-grow" aria-hidden="true" id="importantOpenModal"><span id="importantTable"></span> </i><i class="fa fa-check hvr-pulse-grow" aria-hidden="true" id="doneOpenModal"><span id="doneTable"></span></i></p>
+                        <p class="mainNoteButtons"><i class="fa fa-heart hvr-pulse-grow" aria-hidden="true" id="favourOpenModal"><span id="faHeartTable"> </span></i><i class="fa fa-exclamation-circle hvr-pulse-grow" aria-hidden="true" id="importantOpenModal"><span id="importantTable"></span> </i><i class="fa fa-check hvr-pulse-grow" aria-hidden="true" id="doneOpenModal"><span id="doneTable"></span></i></p>
                     </div>
                 </div>
             </div>
         </div>
         <div class="rightBoxWrapper ">
             <div class="notifyBlock card card-inverse card-danger text-center">
-              <div class="card-block ">
-                <blockquote class="card-blockquote">
-                  <p>Read me</p>
-                 <p class="readMeBox"><i class="fa fa-heart" aria-hidden="true"></i> Favourite Task</p>
-                 <p class="readMeBox"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> Important Task</p>
-                 <p class="readMeBox"><i class="fa fa-check" aria-hidden="true"></i> Completed Task</p>
-                </blockquote>
-              </div>
+                <div class="card-block ">
+                    <blockquote class="card-blockquote">
+                        <p>Read me</p>
+                        <p class="readMeBox"><i class="fa fa-heart" aria-hidden="true"></i> Favourite Task</p>
+                        <p class="readMeBox"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> Important Task</p>
+                        <p class="readMeBox"><i class="fa fa-check" aria-hidden="true"></i> Completed Task</p>
+                    </blockquote>
+                </div>
             </div>
         </div>
     </div>
@@ -88,10 +87,10 @@
     </div>
     <div id="favourModal" class="favourModal">
         <div class="favourModalCon">
-           <div class="favourToolbar">
+            <div class="favourToolbar">
                 <span class="zooModalConTitle">Favourite Task !</span>
                 <span class="favourClose text-right ">&times;</span>
-           </div>            
+            </div>
         </div>
     </div>
     <div id="doneModal" class="doneModal">
@@ -107,70 +106,72 @@
             <div class="calendarToolbar">
                 <span class="calendarModalConTitle">Calendar !</span>
                 <span class="doneClose ">&times;</span>
-                <table class="table table-bordered" id="calendarTable">
-                  <thead>
-                    <tr>
-                      <th>Sun</th>
-                      <th>Mon</th>
-                      <th>Tue</th>
-                      <th>Wed</th>
-                      <th>Thur</th>
-                      <th>Fri</th>
-                      <th>Sat</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td scope="row"></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td scope="row"></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td scope="row"></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td scope="row"></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                        <td scope="row"></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                  </tbody>
+                <table class="table table-bordered " id="calendarTable">
+                    <thead>
+                        <tr class="dayHeaders">
+                            <th>Sun</th>
+                            <th>Mon</th>
+                            <th>Tue</th>
+                            <th>Wed</th>
+                            <th>Thur</th>
+                            <th>Fri</th>
+                            <th>Sat</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td scope="row"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td scope="row"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td scope="row"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td scope="row"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td scope="row"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
         </div>
     </div>
     <div class="container">
-       <div class="row" id="notesPosition"></div>
-        
+        <div class="row" id="notesPosition"></div>
+
     </div>
 
 

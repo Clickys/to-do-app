@@ -192,8 +192,41 @@
                 var monthString = document.getElementsByClassName('monthString')[0];
                 monthString.style.color = '#5cb85c';
             }
+        (function (){
+            var calendarCloseBtn = document.getElementsByClassName('doneClose')[1];
+            var calendarModal = document.getElementById('calendarModal');
+            
+            calendarCloseBtn.addEventListener('click', function(){
+                calendarModal.style.display = "none";    
+            })
+        })();
+        
     fillCalendar();
 
     })();
-    
+
 })();
+    function dragStart(event) {
+            event.currentTarget.style.border = "dashed";
+            event.currentTarget.style.opacity = "0.5";
+            event.dataTransfer.setData('text/plain', event.target.id);
+    }
+    
+    function dragOver(event) {
+        event.preventDefault();
+    }
+
+    function dragDrop(event) {
+        event.preventDefault();
+        var data = event.dataTransfer.getData('text');
+          event.target.style.opacity = "1";
+        event.target.style.border = "none";
+        event.target.appendChild(document.getElementById(data));
+        
+    }
+    function dragEnd(event) {
+        var el = event.dataTransfer.getData('text');
+        event.target.style.opacity = "1";
+        event.target.style.border = "none";
+        event.dataTransfer.clearData();
+    }

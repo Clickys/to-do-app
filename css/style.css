@@ -570,3 +570,13 @@ button#addNotesButton {
 div.calendarToolbar {
     font-weight:700;
 }
+.notesDecoration {
+    cursor: move;
+}
+
+.notesDecoration > .fa-check, .notesDecoration > .fa-heart, .notesDecoration > fa-exclamation-circle {
+    cursor: default;
+}
+.notesDecoration.over {
+    border: 2px dashed #000;
+}

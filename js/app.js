@@ -60,7 +60,7 @@
        
         hours = (hours === 0 ? '12' : hours);
         minutes = (minutes < 10 ? '0' : '') + minutes;
-        
+        var randomId = 0;
         notesTextareaBtn.addEventListener('click', function(e){
             e.preventDefault();
             var notesTextarea = document.getElementById('addNotesTextarea').value;
@@ -89,6 +89,7 @@
             dateEl.className += " noteDateAdded";
             
             
+            
             newEl.appendChild(zoomIcon);
             newEl.appendChild(favourIcon);
             newEl.appendChild(checkIcon);
@@ -98,10 +99,15 @@
      
            
 //            newEl.innerHTML =  checkIcon.outerHTML + closeIcon.outerHTML + favourIcon.outerHTML  + userTxt.textContent + ' <br> ' + '<br>' + dateEl.outerHTML;
+            
+            
             newEl.className += " col-xl-2 col-lg-2 col-md-3 col-sm-4 col-12 notesDecoration";
+            newEl.setAttribute('draggable', 'true');
+            newEl.setAttribute('ondragstart', 'dragStart(event);');
+            newEl.setAttribute('id', 'note' + randomId++);
             notesPositionToAdd.appendChild(newEl);
             document.getElementById("addNotesTextarea").value = "";
-        
+            
 //            $('.fa-window-close').on('click', function(event){
 //                event.preventDefault();
 //                console.log($(this).parents('div')[0]);
